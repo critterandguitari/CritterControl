@@ -5,7 +5,7 @@ import cherrypy
 
 print "loading file operations regualr"
 
-BASE_DIR = "/home/pi/"
+BASE_DIR = "/"
 
 #TODO check all the paths here 
 def check_path(path) :

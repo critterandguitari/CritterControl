@@ -6,7 +6,7 @@ import traceback
 import os
 
 APPS_PATH = '../apps/'
-USER_PATH = '/home/pi'
+USER_PATH = '/usbdrive'
 APPS_PATH_USER = USER_PATH+'/Web/'
 
 print "USER_PATH:" +USER_PATH

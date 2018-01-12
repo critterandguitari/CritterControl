@@ -1,1 +1,1 @@
-# ThingApp
+# CritterControl
