@@ -2,4 +2,4 @@
 
 # start webserver
 cd /home/pi/CritterControl/server
-python2 server.py &
+python2 server.py 
