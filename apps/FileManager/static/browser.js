@@ -1,7 +1,7 @@
 var appBaseURL = '/fm';
 var fsurl = appBaseURL + '/fmdata';
 var workingDir = '';
-var baseDirLabel = 'Home';
+var baseDirLabel = '/';
 var clipboard = {};
 
 function alertDialog(msg){
