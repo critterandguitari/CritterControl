@@ -35,6 +35,22 @@ class Root():
         return json.dumps(info.get_all_info(), indent=4, encoding='utf-8')
     info.exposed = True
   
+    def current(self):
+        return info.get_current_patch()
+    current.exposed = True
+    
+    def list_patches(self):
+        cherrypy.response.headers['Content-Type'] = "application/json"
+        return json.dumps(info.get_all_patches())
+    list_patches.exposed = True
+
+    def select_patch(self, patch) :
+        patch_file = open('/home/pi/Patch/current', 'w')
+        patch_file.write(patch)
+        info.run_cmd("systemctl restart playpatch")
+        return patch
+    select_patch.exposed = True
+
     def control(self, **data):
         
         ret = ''

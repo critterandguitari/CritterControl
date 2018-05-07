@@ -6,6 +6,11 @@ import threading
 import subprocess
 import socket
 
+
+def get_immediate_subdirectories(dir) :
+    return [name for name in os.listdir(dir)
+            if os.path.isdir(os.path.join(dir, name))]
+
 # returns output if exit code 0, NA otherwise
 def run_cmd(cmd) :
     ret = 'None'
@@ -13,6 +18,15 @@ def run_cmd(cmd) :
         ret = subprocess.check_output(['bash', '-c', cmd], close_fds=True)
     except: pass
     return ret
+
+def get_current_patch() :
+    with open('/home/pi/Patch/current') as f:
+        first_line = f.readline()
+    return first_line
+
+def get_all_patches() :
+	return get_immediate_subdirectories('/home/pi/Onda_Patches')
+
 
 def get_all_info() :
     # get info
